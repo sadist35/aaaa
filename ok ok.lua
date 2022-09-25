@@ -1,6 +1,4 @@
-if  getgenv().weburlhook == nil then 
-print("enter webhook url like this  getgenv().weburlhook = 'urlhere'")
-end
+
     
     getgenv().true = true
     getgenv().Number = 0
