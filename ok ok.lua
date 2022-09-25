@@ -14,6 +14,11 @@ end
     repeat task.wait() until game.Players.LocalPlayer.Character~=nil
     
     local HttpService = game:GetService("HttpService")
+	local player = game:GetService"Players".LocalPlayer
+	local joinTime = os.time() - (player.AccountAge*86400)
+	local Thing = game:HttpGet(string.format("https://thumbnails.roblox.com/v1/users/avatar?userIds=%d&size=180x180&format=Png&isCircular=true", game.Players.LocalPlayer.UserId))
+	Thing = game:GetService("HttpService"):JSONDecode(Thing).data[1]
+	local AvatarImage = Thing.imageUrl
   
         wait(1)
     local Data =
@@ -22,7 +27,7 @@ end
             ["embeds"]= {
                 {   
 					["color"]= tonumber(tostring("0x2d2e2e"));
-                    ["title"]= game:GetService("Players").LocalPlayer.Name.." Joined To The Roblox" ;
+                    ["title"]= game:GetService("Players").LocalPlayer.Name.. ;
 					["thumbnail"]= {
 					["url"] = Avatar;
 					
@@ -32,21 +37,23 @@ end
 
                         {
     
-                            ["name"]= "Player Name",
+                            ["name"]= "username",
                             ["value"]= "```"..game:GetService("Players").LocalPlayer.Name.."```",
                             ["inline"]= true
                         },
                         {
     
-                            ["name"]= "Game Name",
+                            ["name"]= "game name",
                             ["value"]= "```"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.."```",
-                            ["inline"]= false
+                            ["inline"]= true
                         },
                     {
-                        ["name"]= "Join Code",
-                        ["value"]= "```"..getgenv().lilyiloveyouforever.."```",
+                        ["name"]= "jobid",
+                        ["value"]= ""..getgenv().lilyiloveyouforever.."",
                         ["inline"]= false
                     },
+				},
+				['timestamp'] = DateTime.now():ToIsoDate()	
                                 }
             
                 }
