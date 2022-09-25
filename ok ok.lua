@@ -3,7 +3,7 @@ if  getgenv().weburlhook == nil then
 print("enter webhook url like this  getgenv().weburlhook = 'urlhere'")
 end
     
-    getgenv().lilybusy = true
+    getgenv().true = true
     getgenv().Number = 0
     getgenv().lilyiloveyouforever = "game:GetService('TeleportService'):TeleportToPlaceInstance("..game.PlaceId..", '"..game.JobId.."', game:GetService('Players').LocalPlayer) \n--[[\nLily I Love You Forever\n]]"
 
@@ -20,9 +20,12 @@ end
         {
             ["description"]= "Omg Aniueqand Script";
             ["embeds"]= {
-                {            
+                {   
+					["color"]= tonumber(tostring("0x2d2e2e"));
                     ["title"]= game:GetService("Players").LocalPlayer.Name.." Joined To The Roblox" ;
-                    ["url"]= "https://github.com/aniueqand";
+					["thumbnail"]= {
+					["url"] = Avatar;
+					
                
                     
                     ["fields"]= {
